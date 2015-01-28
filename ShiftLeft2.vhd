@@ -8,12 +8,9 @@ entity ShiftLeft2 is
       );
 end ShiftLeft2;
 architecture beh of ShiftLeft2 is
+  signal temp : std_logic_vector(31 downto 0);
 begin
-  process
-    variable temp : std_logic_vector(31 downto 0);
-  begin
-    temp(31 downto 2):=x(29 downto 0);
-    temp(1 downto 0):="00";
+    temp(31 downto 2)<=x(29 downto 0);
+    temp(1 downto 0)<=x(31 downto 30);
     y<=temp;
-  end process;
 end beh;
