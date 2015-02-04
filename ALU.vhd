@@ -7,7 +7,7 @@ generic(n:natural:=32);
 port(	a,b:in std_logic_vector(n-1 downto 0);
 		Oper:in std_logic_vector(3 downto 0);
 		Result:buffer std_logic_vector(n-1 downto 0);
-		Zero,Overflow:buffer std_logic);
+		Zero,Set,Overflow:buffer std_logic);
  end ALU;
 architecture beh of ALU is
 	component ALU1 is
